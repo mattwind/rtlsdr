@@ -6,6 +6,18 @@ Patched to work with ARM devices, tested on Raspberry Pi or Beaglebone Black run
 
 `git submodule update --init --recursive`
 
+## rtl-sdr 
+
+```
+cd rtl-sdr/
+mkdir build
+cd build
+cmake ../
+make
+sudo make install
+sudo ldconfig
+```
+
 ## Programs
 
 * dsd
