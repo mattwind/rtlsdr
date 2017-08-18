@@ -15,8 +15,23 @@ cd build
 cmake ../
 make
 sudo make install
+sudo cp ../rtl-sdr.rules /etc/udev/rules.d/rtl-sdr.rules
 sudo ldconfig
 ```
+
+### Blacklist
+
+`sudo vi /etc/modprobe.d/blacklist-rtl.conf`
+
+Add these three lines
+
+```
+blacklist dvb_usb_rtl28xxu
+blacklist rtl2832
+blacklist rtl2830
+```
+
+Now reboot with dongle attached
 
 ## Programs
 
