@@ -6,7 +6,7 @@ Patched to work with ARM devices, tested on Raspberry Pi or Beaglebone Black run
 
 `git submodule update --init --recursive`
 
-## rtl-sdr 
+## Compile rtl-sdr 
 
 ```
 cd rtl-sdr/
@@ -33,17 +33,10 @@ blacklist rtl2830
 
 Now reboot with dongle attached
 
-## Programs
+## Additional programs
 
 * dsd
 * dump1090
 * dumpvdl2
 * mbelib
 * multimon-ng
-
-## Decoding
-
-* pocsaq
-* mode select
-* df formats
-* vdl mode 2

@@ -19,13 +19,8 @@ The main features are:
 * Interactive command-line-interfae mode where aircrafts currently detected
   are shown as a list refreshing as more data arrives.
 * CPR coordinates decoding and track calculation from velocity.
-* TCP server streaming and receiving raw data to/from connected clients
+* TCP server streaming and recceiving raw data to/from connected clients
   (using --net).
-
-While from time to time I still add / fix stuff in my fork, I target
-minimalism of the implementation. However there is a
-[much more feature complete fork](https://github.com/MalcolmRobb/dump1090)
-available, developed by MalcolmRobb.
 
 Installation
 ---
@@ -53,7 +48,7 @@ with your browser to http://localhost:8080 to see live traffic:
 
     ./dump1090 --interactive --net
 
-In interactive mode it is possible to have a less information dense but more
+In iteractive mode it is possible to have a less information dense but more
 "arcade style" output, where the screen is refreshed every second displaying
 all the recently seen aircrafts with some additional information such as
 altitude and flight number, extracted from the received Mode S packets.
@@ -91,9 +86,13 @@ it without arguments at all is the best thing to do.
 Reliability
 ---
 
-By default Dump1090 tries to fix single bit errors using the checksum.
-Basically the program will try to flip every bit of the message and check if
-the checksum of the resulting message matches.
+By default Dump1090 checks for decoding errors using the 24-bit CRC checksum,
+where available. Messages with errors are discarded.
+
+The --fix command line switch enables fixing single bit error correction
+based on the CRC checksum. Technically, it uses a table of precomputed
+checksum differences resulting from single bit errors to look up the
+wrong bit position.
 
 This is indeed able to fix errors and works reliably in my experience,
 however if you are interested in very reliable data I suggest to use
@@ -186,7 +185,7 @@ away from me.
 If you are interested in a more serious antenna check the following
 resources:
 
-* http://gnuradio.org/data/grcon11/06-foster-adsb.pdf
+* http://gnuradio.org/redmine/attachments/download/246/06-foster-adsb.pdf
 * http://www.lll.lu/~edward/edward/adsb/antenna/ADSBantenna.html
 * http://modesbeast.com/pix/adsb-ant-drawing.gif
 
@@ -195,18 +194,19 @@ Aggressive mode
 
 With --aggressive it is possible to activate the *aggressive mode* that is a
 modified version of the Mode S packet detection and decoding.
-THe aggresive mode uses more CPU usually (especially if there are many planes
+The aggresive mode uses more CPU usually (especially if there are many planes
 sending DF17 packets), but can detect a few more messages.
 
 The algorithm in aggressive mode is modified in the following ways:
 
-* Up to two demodulation errors are tolerated (adjacent entires in the magnitude
-  vector with the same eight). Normally only messages without errors are
-  checked.
-* It tries to fix DF17 messages trying every two bits combination.
+* Up to two demodulation errors are tolerated (adjacent entires in the
+  magnitude vector with the same eight). Normally only messages without
+  errors are checked.
+* It tries to fix DF17 messages with CRC errors resulting from any two bit
+  errors.
 
-The use of aggressive mdoe is only advised in places where there is low traffic
-in order to have a chance to capture some more messages.
+The use of aggressive mdoe is only advised in places where there is
+low traffic in order to have a chance to capture some more messages.
 
 Debug mode
 ---
