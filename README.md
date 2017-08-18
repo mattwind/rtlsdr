@@ -1,6 +1,6 @@
 # RTLSDR
 
-Patched to work with ARM on Raspberry Pi or Beaglebone Black.
+Patched to work with ARM devices, tested on Raspberry Pi or Beaglebone Black running Debian Wheezy.
 
 ## Programs
 
