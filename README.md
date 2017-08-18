@@ -40,3 +40,11 @@ Now reboot with dongle attached
 * dumpvdl2
 * mbelib
 * multimon-ng
+
+# Issues
+
+#### Error: symbol lookup error undefined symbol: rtlsdr set bias tee
+
+Removing librtlsdr0 fixed this issue.
+
+`sudo apt-get remove librtlsdr0`
