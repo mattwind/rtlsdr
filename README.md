@@ -7,3 +7,10 @@ Patched to work with ARM on Raspberry Pi or Beaglebone Black.
 * dumpvdl2
 * mbelib
 * multimon-ng
+
+## Decoding
+
+* pocsaq
+* mode select
+* df formats
+* vdl mode 2
