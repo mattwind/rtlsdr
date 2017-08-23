@@ -33,11 +33,12 @@ blacklist rtl2830
 
 Now reboot with dongle attached
 
-## Additional programs
+## Programs
 
 * dsd
 * dump1090
 * dumpvdl2
+* gpredict
 * mbelib
 * multimon-ng
 
