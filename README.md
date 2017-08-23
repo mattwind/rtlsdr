@@ -42,6 +42,12 @@ Now reboot with dongle attached
 * mbelib
 * multimon-ng
 
+# Additional Resources
+
+* Signal Identification http://www.sigidwiki.com/wiki/Signal_Identification_Guide
+* Reddit Community https://www.reddit.com/r/RTLSDR/
+* RTL-SDR Blog http://www.rtl-sdr.com
+
 # Issues
 
 #### Error: symbol lookup error undefined symbol: rtlsdr set bias tee
