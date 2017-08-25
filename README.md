@@ -49,6 +49,12 @@ Now reboot with dongle attached
 * RTL-SDR Blog http://www.rtl-sdr.com
 * rtl_power http://kmkeen.com/rtl-power/
 
+# rtl_power
+
+Send band survey to another computer over SSH
+
+`rtl_power -f 118M:137M:8k -g 50 -i 10 -e 5h | ssh user@172.16.0.10 "cat > /home/user/airband.csv"`
+
 # Issues
 
 #### Error: symbol lookup error undefined symbol: rtlsdr set bias tee
