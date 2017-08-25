@@ -44,10 +44,10 @@ Now reboot with dongle attached
 
 # Additional Resources
 
-* [Signal Identification] (http://www.sigidwiki.com/wiki/Signal_Identification_Guide)
-* [Reddit Community] (https://www.reddit.com/r/RTLSDR/)
-* [RTL-SDR Blog] (http://www.rtl-sdr.com)
-* [rtl_power] (http://kmkeen.com/rtl-power/)
+* [Signal Identification](http://www.sigidwiki.com/wiki/Signal_Identification_Guide)
+* [Reddit Community](https://www.reddit.com/r/RTLSDR/)
+* [RTL-SDR Blog](http://www.rtl-sdr.com)
+* [rtl_power](http://kmkeen.com/rtl-power/)
 
 # rtl_power
 
